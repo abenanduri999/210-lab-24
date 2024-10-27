@@ -116,7 +116,7 @@ int main_menu()
 
 }
 
-void display_trip(list<Goat> trip)
+void display_trip(set<Goat> trip)
 {   
     int i = 1;
     for(auto it = trip.begin(); it != trip.end(); ++it)
@@ -128,17 +128,17 @@ void display_trip(list<Goat> trip)
     cout<<endl; 
 }
 
-void add_goat(list<Goat> &trip, string n[], string c[])
+void add_goat(set<Goat> &trip, string n[], string c[])
 {
     Goat temp; 
     temp.set_name(n[rand() % SZ_NAMES]); 
     temp.set_age(rand() % MAX_AGE); 
     temp.set_color(c[rand() % SZ_COLORS]);
-    trip.push_back(temp); 
+    trip.insert(temp); 
 
 } 
 
-void delete_goat(list<Goat> &trip)
+void delete_goat(set<Goat> &trip)
 {
    int del = select_goat(trip); 
    auto it = trip.begin();
@@ -148,7 +148,7 @@ void delete_goat(list<Goat> &trip)
     
 }
 
-int select_goat(list<Goat> trip) 
+int select_goat(set<Goat> trip) 
 {
     int choice; 
     cout<<"Select a goat to delete:"<<endl;
