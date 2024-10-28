@@ -46,7 +46,7 @@ int main() {
         temp.set_name(names[randn]);
         temp.set_age(randa);
         temp.set_color(colors[randc]);
-        trip.insert(temp); 
+        trip.insert(temp); //use insert instead of push back
     }
 
     int choice;
@@ -59,11 +59,15 @@ int main() {
         case 1:
         
             add_goat(trip, names, colors);
+            cout<<endl;
+            display_trip(trip);
             break;
         
         case 2:
         
             delete_goat(trip);
+            cout<<endl;
+            display_trip(trip);
             break;
               
         case 3:
@@ -94,10 +98,11 @@ int main_menu()
         cout<<"Choice --> ";
         cin>>choice; 
         //return choice; 
+        cout<<endl;
        switch(choice) 
             {
                 case 1:
-                    cout<<"A goat is added"<<endl; 
+                    cout<<"A goat is added"<<endl<<endl; 
                     return choice;
                     
                 case 2: 
@@ -105,7 +110,7 @@ int main_menu()
                     return choice;
 
                 case 3: 
-                    cout<<"This is the list of goats"<<endl; 
+                    cout<<"This is the list of goats"<<endl<<endl; 
                     return choice;
                      
                 case 4: 
